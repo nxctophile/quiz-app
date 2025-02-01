@@ -1,0 +1,85 @@
+/* Options Component */
+.options {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Cover the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Wrapper for OptionList and Button */
+.options-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between OptionList and button */
+    width: 60%; /* Adjust width as needed */
+    max-width: 800px; /* Limit maximum width */
+}
+
+/* OptionList Component */
+.option-main-container {
+    display: flex;
+    gap: 20px; /* Space between left and right columns */
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.left-side-options, .right-side-options {
+    display: flex;
+    margin-left: 7%;
+    flex-direction: column;
+    gap: 30px; /* Space between individual options */
+    width: 100%; /* Each side takes half the container */
+}
+
+.option-box {
+    color: #f1f1f1;
+    padding: 10%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between radio button and label */
+    width: 100%;
+    cursor: pointer
+}
+
+.option-box:hover {
+    background: rgba(0, 0, 0, 0.7); /* Darken on hover */
+}
+
+.option-box input[type="radio"] {
+    accent-color: #8451ad49; /* Change radio button color */
+    transform: scale(1.2); /* Increase radio button size */
+    cursor: pointer;
+    margin-top: 5%;
+}
+
+.option-box label {
+    font-size: 1.1em;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Lock Button */
+.btn-to-lock-ans {
+    padding: 4%;
+    margin-left: 15%;
+    margin-top: 2%;
+    font-weight: bold;
+    color: beige;
+    background-color: rgb(73, 73, 73);
+    border: 2px solid wheat;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn-to-lock-ans:hover {
+    color: white;
+    box-shadow: 0 0 10px 5px rgba(218, 218, 218, 0.8);
+}
