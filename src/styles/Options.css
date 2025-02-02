@@ -1,60 +1,65 @@
-/* Options Component */
 .options {
-    margin-left: -8em;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.options-wrapper {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-main-container {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-/* Wrapper for OptionList and Button */
-.options-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Space between OptionList and button */
-    width: 70%; /* Adjust width as needed */
-}
-
-/* OptionList Component */
-.option-main-container {
-    display: flex;
-    gap: 20px; /* Space between left and right columns */
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 5%;
-}
-
 .left-side-options, .right-side-options {
     display: flex;
-    margin-left: 7%;
     flex-direction: column;
-    gap: 30px; /* Space between individual options */
-    width: 100%; /* Each side takes half the container */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
 }
 
 .option-box {
+    height: 10%;
+    width: 70%;
     color: #f1f1f1;
-    padding: 10%;
     border-radius: 10px;
-    backdrop-filter: blur(5px); /* Frosted glass effect */
+    backdrop-filter: blur(5px);
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    gap: 10px; /* Space between radio button and label */
-    width: 100%;
-    cursor: pointer
+    cursor: pointer;
+    padding: 1em;
+    margin-bottom: 1.5em;
 }
 
 .option-box:hover {
-    background: rgba(0, 0, 0, 0.7); /* Darken on hover */
+    background: #222b;
 }
 
 .option-box input[type="radio"] {
-    accent-color: #8451ad49; /* Change radio button color */
-    transform: scale(1.2); /* Increase radio button size */
+    accent-color: rgb(35, 171, 35);
+    transform: scale(1.2);
     cursor: pointer;
-    margin-top: 5%;
+    margin-top: 1.5em;
+    margin-right: 1em;
+    height: 16px;
+    width: 16px;
 }
 
 .option-box label {
@@ -63,21 +68,21 @@
     cursor: pointer;
 }
 
-/* Lock Button */
 .btn-to-lock-ans {
-    padding: 2.5%;
-    margin-left: 15%;
-    margin-top: 2%;
+    position: relative;
+    height: 15%;
+    width: 100%;
+    font-family: "Lexend", serif;
+    font-size: 1rem;
     font-weight: bold;
     color: beige;
-    background-color: rgb(73, 73, 73);
-    border: 2px solid wheat;
-    border-radius: 10px;
+    border: none;
     cursor: pointer;
-    transition: box-shadow 0.3s ease;
+    transition: 0.3s;
+    background: #242424;
 }
 
 .btn-to-lock-ans:hover {
     color: white;
-    box-shadow: 0 0 10px 5px rgba(218, 218, 218, 0.8);
+    background-color: rgb(35, 171, 35);
 }

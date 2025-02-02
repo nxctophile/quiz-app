@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4em;
+    background: #111a;
+    border-radius: 10em;
+    position: relative;
+    margin-bottom: 1em;
+    backdrop-filter: blur(5px);
+}
+
+.username {
+    font-weight: 700;
+    color: white;
+    margin: 0 0.5em;
+}
+
+.logout-button{ 
+    padding: 0.5em 1em;
+    color: white;
+    background: #242424;
+    border: none;
+    border-radius: 10em;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9em;
+    font-family: "Lexend", serif;
+}
+
+
+.logout-button:hover {
+    border-color: #ccc;
+    background-color: rgb(187, 27, 27);
+    color: white;
+    box-shadow: 0 0 10px 5px rgb(41, 41, 41);
+  }

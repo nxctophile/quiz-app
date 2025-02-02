@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import data from "../data.json";
 import { useDispatch, useSelector } from "react-redux";
 import { addAnswer } from "../store/answerSlice";
+import bg from "../assets/bg.mp4";
 
 export default function Questions() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -66,25 +67,28 @@ export default function Questions() {
   return (
     <form onSubmit={handleSubmit}>
       <video autoPlay muted loop>
-        <source src="../assets/front-page.mp4" type="video/mp4" />
+        <source src={bg} type="video/mp4" />
       </video>
-      <div className="Question-tab">
-        <Header />
-        <div className="questions-container">
-          <div className="questions">
-            <h2>
-              Q{currentQuestion + 1}.{" "}
-              {data?.questions?.[currentQuestion]?.description || "Loading..."}
-            </h2>
-            {data?.questions?.[currentQuestion]?.options ? (
-              <Options
-                setCurrentQuestion={setCurrentQuestion}
-                currentQuestion={currentQuestion}
-                options={data.questions[currentQuestion].options}
-              />
-            ) : (
-              <p>Loading options...</p>
-            )}
+      <div className="elements-container">
+          <Header />
+        <div className="question-tab">
+          <div className="questions-container">
+            <div className="questions">
+              <h2>
+                Q{currentQuestion + 1}.{" "}
+                {data?.questions?.[currentQuestion]?.description ||
+                  "Loading..."}
+              </h2>
+              {data?.questions?.[currentQuestion]?.options ? (
+                <Options
+                  setCurrentQuestion={setCurrentQuestion}
+                  currentQuestion={currentQuestion}
+                  options={data.questions[currentQuestion].options}
+                />
+              ) : (
+                <p>Loading options...</p>
+              )}
+            </div>
           </div>
         </div>
       </div>

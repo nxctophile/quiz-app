@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Homepage.css";
 import Greeting from "../components/Greeting"; // Ensure the import path is correct
+import bg from "../assets/bg.mp4";
 
 function Index() {
   const [name, setName] = useState(""); // State to store the input value
@@ -14,10 +15,22 @@ function Index() {
     if (name.length !== 0) setShowGreeting(true); // Show the Greeting component when the button is clicked
   };
 
+  const changeName = () => {
+    localStorage.removeItem("name");
+    const input = document.querySelector("#nameInput");
+    if (input) input.value = "";
+    setShowGreeting(false);
+  };
+
+  useEffect(() => {
+    const input = document.querySelector("input");
+    if (input) input.focus();
+  }, []);
+
   return (
-    <div>
+    <div className="root-container">
       <video autoPlay muted loop>
-        <source src="../assets/front-page.mp4" type="video/mp4" />
+        <source src={bg} type="video/mp4" />
       </video>
       <div className="main-container">
         <div className="main">
@@ -25,13 +38,14 @@ function Index() {
 
           {/* Conditionally render either the input field or the Greeting component */}
           {showGreeting ? (
-            <Greeting name={name} />
+            <Greeting name={name} changeName={changeName} />
           ) : (
             <div className="input-fields">
               <h2> What Should We Call You? </h2>
               <input
+              id="nameInput"
                 type="text"
-                placeholder="John-Doe"
+                placeholder="Enter your name"
                 value={name}
                 onChange={(e) => nameHandler(e.target.value)} // Update the state on input change
               />

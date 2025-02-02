@@ -1,6 +1,50 @@
 .confirm-name-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting-button {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  text-decoration: none;
+  padding: 2%;
+  color: beige;
+  background-color: #3336;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #333;
+}
+.greeting-button:hover {
+  border-color: #ccc;
+  background-color: #3339;
+  color: white;
+  box-shadow: 0 0 10px 5px rgb(41, 41, 41);
+}
+
+.change-name {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 2%;
+  color: beige;
+  background-color: #3336;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #333;
+}
+
+.change-name:hover {
+  border-color: #ccc;
+  background-color: #3339;
+  color: white;
+  box-shadow: 0 0 10px 5px rgb(41, 41, 41);
 }
