@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
-import './Homepage.css';
-import Greeting from './Greeting'; // Ensure the import path is correct
+import React, { useState } from "react";
+import "../styles/Homepage.css";
+import Greeting from "../components/Greeting"; // Ensure the import path is correct
 
-function Homepage() {
-  const [name, setName] = useState(''); // State to store the input value
+function Index() {
+  const [name, setName] = useState(""); // State to store the input value
+  const nameHandler = (value) => {
+    localStorage.setItem("name", value);
+    setName(value);
+  };
   const [showGreeting, setShowGreeting] = useState(false); // State to control visibility of Greeting
 
   const FireWelcome = () => {
-    console.log('Hiie Button clicked');
-    console.log('Name:', name); // Debugging: Check the name value
-    setShowGreeting(true); // Show the Greeting component when the button is clicked
+    if (name.length !== 0) setShowGreeting(true); // Show the Greeting component when the button is clicked
   };
 
   return (
     <div>
       <video autoPlay muted loop>
-        <source src='../assets/front-page.mp4' type='video/mp4' />
+        <source src="../assets/front-page.mp4" type="video/mp4" />
       </video>
       <div className="main-container">
         <div className="main">
@@ -29,16 +31,18 @@ function Homepage() {
               <h2> What Should We Call You? </h2>
               <input
                 type="text"
-                placeholder='John-Doe'
+                placeholder="John-Doe"
                 value={name}
-                onChange={(e) => setName(e.target.value)} // Update the state on input change
+                onChange={(e) => nameHandler(e.target.value)} // Update the state on input change
               />
             </div>
           )}
 
           {/* Render the button only if showGreeting is false */}
           {!showGreeting && (
-            <button className='btn' onClick={FireWelcome}>Set Player</button>
+            <button className="btn" onClick={FireWelcome}>
+              Set Player
+            </button>
           )}
         </div>
       </div>
@@ -46,4 +50,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default Index;

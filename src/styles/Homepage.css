@@ -27,13 +27,15 @@
 input{
     padding: 2.5%;
     margin-bottom: 5%;
-    background-color: transparent;
+    background-color: #3336;
+    border-radius: 10px;
     border: none;
     font-weight: 900;
     color: #f1f1f1;
     outline: none;
 }
 .btn{
+    text-decoration: none;
     padding: 2.5%;
     margin-top: 10%;
     color: beige;
